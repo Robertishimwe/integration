@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="shortcut icon" href="./images/logo3ff.svg" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>Welcome my portofolio</title>
+</head>
+<body>
+    
+          
+    <div class="nav">
+        <div class="logo"><a href="#"><img src="./images/logo head.png" alt="logo" id="logo"></a></div>
+        <div class="menu" id="menu">
+            <ul class="menu-liste">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./html/aboutMe.html">About me</a></li>
+                <li><a href="#skills-section">Skills</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="./html/blogTest.html">Blog</a></li>
+                <a href="./html/login.html" class="loginBtn"> <li class="login">Log in</li> </a>
+            </ul>
+        </div>
+
+           <img src="./images/icons8-menu.svg" alt="home-burge" class="home_burger" onclick="homeicon()">
+           <img src="./images/icons8-close.svg" alt="close" class="home_close" onclick="homeClose()">
+    </div>
+
+   <!--end of navigation bar-->> 
+    
+    <div class="container">
+        <div class="introduction-section">
+            <div class="introduction">
+
+                <p class="intro">Hello,<br/> I am Ishimwe Robert <br/> I am Rwanda based full-stack developer.</p>
+                
+            </div>
+
+            <a href="#contactUs" id="hireMe"> <p class="hireMe"> Hire me</p></a>
+
+        </div>
+
+        <!--end of introduction section-->
+
+        <div class="skills-section" id="skills-section">
+
+             <div class="card card1" id="card-1"><img src="./images/my photo.png" alt="my photo" class="profile-picture"></div>
+             <div class="card card2"> <p class="title-card">Front-end skills</p>
+                <ul class="skills-liste">
+                    <li>Html</li>
+                    <progress max="100" value="70"></progress>
+        
+                    <li>CSS</li>
+                    <progress max="100" value="20"></progress>
+                    <li>JavaScript</li>
+                    <progress max="100" value="20"></progress>
+                    <li>Bootstrap</li>
+                    <progress max="100" value="20"></progress>
+                    <li>Jquery</li>
+                    <progress max="100" value="20"></progress>
+                    
+                </ul>
+        
+        
+            </div>
+            <div class="card card3"> <p class="title-card">Back-end skills</p>
+                <ul class="skills-liste">
+                    <li>Node js</li>
+                    <progress max="100" value="20"></progress>
+                    <li>Mongo DB</li>
+                    <progress max="100" value="20"></progress>
+                    <li>Mysql</li>
+                    <progress max="100" value="20"></progress>
+                    <li>PHP</li>
+                    <progress max="100" value="20"></progress>
+                    <li>API</li>
+                    
+                </ul>
+            </div>
+
+
+
+        </div>
+        <!--end of skills section-->
+        
+        <div class="projects" id="projects">
+           <p class="recent-projects">Recent Projects</p>      
+            <d class="project-cards">
+              <div class="project-card"><img src="./images/proj1.PNG" alt="" class="img-project"></div>
+              <div class="project-card"><img src="./images/proj3.PNG" alt="" class="img-project" ></div>
+              <div class="project-card"><img src="./images/proj4.PNG" alt="" srcset="" class="img-project"></div>
+              <div class="project-card"><img src="./images/project5.png" alt="" class="img-project"></div>
+            </d>
+        </div>
+
+
+        <div class="contact-section" id="contactUs">
+            <p class="contact-title">Let’s get in touch</p>
+
+            <form action="#" method="get" class="contact-form">
+
+                <label for="name" class="contact-label">NAME:</label> 
+                
+                <input type="text" name="name" id="name" class="contact-box" required>
+                <br/>
+                <label for="email" class="contact-label">EMAIL:</label>
+                
+                <input type="email" name="email" id="email" class="contact-box" required>
+                <br/>
+                <label for="message" class="contact-label">MESSAGE:</label>
+            
+                <input type="text" name="message" id="message" class="contact-box contact-message" required>
+                <br/>
+                <input type="submit" value="Send message" class="send-message" onclick="storeMessage()">
+
+            </form>
+
+        </div>
+        <div class="footer">
+
+            <div class="footer-content footer-content-1">
+                <img src="./images/logo3-1-1@2x.png" alt="logo" class="footer-logo">
+            </div>
+
+            <div class="footer-content">
+                <p class="footer-titles">Address</p>
+
+                    <ul class="footer-liste">
+                        <li>Kigali,</li>
+                        <li>Nyarugenjye</li>
+                        <li>Nyakabanda</li>
+                        <li>KN 193 ST</li>
+                    </ul>
+
+            </div>
+            <div class="footer-content">
+                <p class="footer-titles">Contact Me</p>
+
+                <ul class="footer-liste">
+                    <li>Tel: +250787885197</li>
+                    <li>robertishimwe0@gmail.com</li>
+
+                </ul>
+            </div>
+
+
+
+            <div class="footer-content">
+                <p class="footer-titles">Newsletter</p>
+
+                <form action="#" method="get"class="Newsletter-form">
+                    <input type="email" name="email2" id="email2"><br/>
+                    <input type="submit" class="subscribe" class="subscribe" value="Subscribe" onclick="subscriptionFetcher()">
+
+                </form>
+            </div>
+
+        </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="./javaScript/menu_control.js"></script>
+    <script src="./javaScript/geoTracker.js"></script>
+    <script src="./javaScript/subscriptionFetch.js"></script>
+    <script src="./javaScript/message.js"></script>
+    
+</body>
+</html>
