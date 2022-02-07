@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo3ff.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+
+    
+    <title>Login</title>
+</head>
+<body>
+    
+          <menu-bar></menu-bar>
+          
+
+          <div class="login-container"> 
+              <p class="login-title">Login</p>
+              <p class="error_message" id="error_message"></p>
+              <form method="post" class="login-form"> 
+
+                  <label for="email" class="login-text">Email</label><br/>
+
+                  <input type="email" name="user-email" id="user_email"class="login-components"><br/>
+
+                  <label for="password" class="login-text">Password</label><br/>
+
+                  <input type="password" name="user-password" id="user-password" class="login-components"><br/> <br/>
+
+                  <input type="button" value="login" class="login-components btn-text" onclick="login()" id="loginbtn"><br/><br/>
+                  <p class="nothaveAccount">Not have Account? <a href="../html/register.html"> Sign up here</a></p>
+              </form>
+
+          </div>
+
+          <!--<footer-bar></footer-bar>-->
+           <script src="../javaScript/login.js"></script>
+          <script src="../javaScript/menu.js"></script>
+         <!--<script  src="../javaScript/footer.js"></script>-->
+          
+         
+</body>
+
+  
+</html>

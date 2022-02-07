@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../images/logo3ff.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/register.css">
+
+    
+    <title>Register</title>
+</head>
+<body>
+    
+          <menu-bar></menu-bar>
+          
+
+          <div class="login-container"> 
+              <p class="login-title">Sign Up</p>
+              <p class="error_message" id="error_message"></p>
+              <form method="post" class="login-form"> 
+                  <label for="name" class="login-text">User name</label><br/>
+
+                  <input type="text" name="user-name" id="user_name"class="login-components userName"><br/>
+
+                  <label for="email" class="login-text">Email</label><br/>
+
+                  <input type="email" name="user-email" id="user_email"class="login-components userEmail"><br/>
+
+                  <label for="password" class="login-text">Password</label><br/>
+
+                  <input type="password" name="user-password" id="user-password" class="login-components userPassword"><br/>
+                  
+                  <label for="password" class="login-text">Repeat Password</label><br/>
+
+                  <input type="password" name="user-password" id="user-password2" class="login-components userPassword2"><br/><br/>
+
+                  <input type="button" value="Sign up" class="login-components btn-text" onclick="register()" id="loginbtn"><br><br/>
+                  <p class="nothaveAccount2">Already have Account? <a href="../html/login.html" class="login">Login here</a></p>
+              </form>
+
+          </div>
+
+          <!--<footer-bar></footer-bar>-->
+           <script src="../javaScript/register.js"></script>
+          <script src="../javaScript/menu.js"></script>
+         <!--<script  src="../javaScript/footer.js"></script>-->
+          
+         
+</body>
+
+  
+</html>

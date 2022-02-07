@@ -1,0 +1,499 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+.nav {
+    display: flex;
+    justify-content:space-between;
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    background-color:white;
+    z-index: 9;
+}
+
+#logo{
+    cursor: pointer;
+    width: 70%;
+}
+.home_burger {
+    display: none;
+    width: 50px;
+}
+.home_close{
+    display: none;
+    width: 50px;
+}
+.menu-liste{
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content:space-evenly;
+    list-style: none;
+    color: #1D53AE;
+    font-weight: bolder;
+    font-size: 20px;
+    right: 100px;
+    font-family: 'Roboto', sans-serif;
+   /* border: 1px solid black; */
+    
+}
+ul li a:hover{
+text-decoration: underline;
+
+}
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+   /* border: 1px solid black; */
+    height: 100%;
+   
+}
+.login{
+    border: 1px solid #1D53AE;
+    border-radius: 36px;
+    padding: .7em 1.6em;
+}
+ul li a{
+    text-decoration: none;
+    color:#1D53AE;
+    cursor: pointer;
+}
+.loginBtn{
+
+    text-decoration: none;
+    color:#1D53AE;
+    cursor: pointer;
+    
+}
+.loginBtn:hover{
+    background-color:#1D53AE;
+    color: white;
+    border-radius: 36px;
+    transition: 0.9S;
+    
+    
+    
+}
+/*end of navigation bar*/
+
+
+
+html{
+    font-family:'Roboto', sans-serif;
+}
+
+.container{
+    display: flex;
+    position:absolute;
+    
+    width: 100%;
+    height: 2500px;
+    
+    left: 0;
+}
+
+.introduction-section{
+    position: absolute;
+    width: 100%;
+    height: 653px;
+    background-color: #3A5768;
+}
+.introduction{
+    margin: auto;
+    margin-top: 200px;
+    width: 100%;
+    height: 229px;
+  /*  background-color: green;
+    border:1px solid white; */
+}
+.intro{
+  text-align: center;
+  color: white;
+  font-size: 44px;
+}
+#hireMe{
+    text-decoration: none;
+    color: #1D53AE;
+    
+}
+#hireMe:hover{
+    text-decoration: none;
+    color: #FFF;
+}
+
+
+.hireMe{
+    margin: auto;
+    margin-top: 30px;
+    width: 12rem;
+    font-size: 42px;
+    text-align: center;
+    background-color: white;
+    color:  #1D53AE; 
+    border-radius:29px;
+    padding: .4em .7em;
+    cursor: pointer;
+    
+
+}
+.hireMe:hover{
+    background-color:#1D53AE;
+    color: white;
+    cursor: pointer;
+    transition: 0.6s;
+
+}
+
+    
+
+/*end of introduction section*/
+
+.skills-section{
+    margin-top: 650px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 600px;
+    
+}
+.card{
+    width: 24%;
+    height: 400px;
+    margin-top: 40px;
+    background-color: white;
+    box-shadow: 4px 4px 4px 4px#888888;
+    
+}
+
+#card-1{
+    position: relative;
+}
+
+
+.profile-picture{
+    width: 119%;
+    height: 115%;
+    margin-top: -46px;
+    margin-left: -1.5em;
+}
+.title-card{
+    text-align: center;
+    font-size: 34px;
+    color: #1D53AE;
+}
+.skills-liste{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink:calc(80);
+    font-size: 25px;
+    
+    
+}
+.skills-liste li{
+    padding-bottom: 0px;
+}
+/*end of skills section*/
+.projects{
+    width: 100%;
+    position: absolute;
+    height: 450px;
+    background-color: #dde9f0;
+    margin-top: 1170px;
+}
+.recent-projects{
+    color: #1D53AE;
+    font-size: 30px;
+    text-align: center;
+
+}
+.project-cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+.project-card{
+    width: 20%;
+    height: 300px;
+    background-color: white;
+    border-radius: 30px;
+}
+.img-project{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+/*end of project section*/
+
+.contact-section{
+    position: absolute;
+    width: 100%;
+    height: 630px;
+    background-color: #dde9f0;
+    margin-top:  1619px;
+    
+}
+.contact-title{
+    color: #1D53AE;
+    font-size: 30px;
+    text-align: center;
+
+}
+.contact-form{
+    margin: auto;
+    width: 30%;
+    height: 420px;
+    border: 1px solid #1D53AE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    
+}
+.contact-box{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 38px;
+    background-color: #FFF;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.contact-message{
+    height: 100px;
+
+}
+.contact-label{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+
+}
+.send-message{
+    width: 80%;
+    height: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #1D53AE;
+    background-color: #dde9f0;
+    font-size: 25px;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+.send-message:hover{
+    background-color: #1D53AE;
+    color: #dde9f0;
+    cursor:pointer;
+    transition: 1s;
+
+}
+progress{
+    width:60%;
+}
+/*end of contact*/
+.footer{
+    width: 100%;
+    height: 320px;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    background-color:#3A5768;
+    margin-top:  2245px;
+}
+.footer-content{
+    margin-top: 30px;
+    width: 20%;
+    height: 250px;
+   
+}
+.footer-logo{
+  height: 100%;
+  width: 100%;
+}
+.footer-titles{
+    color: white;
+    font-size: 25px;
+}
+
+#email2{
+    width: 70%;
+    height: 27px;
+    border: none;
+    outline: none;
+    
+
+
+}
+.subscribe{
+    width: 40%;
+    height: 29px;
+    font-size: 20px;
+    background-color:#1D53AE;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 4px;
+    
+
+}
+.subscribe:hover{
+    background-color: #035bf3f6;
+    color: white;
+}
+.footer-liste{
+    color: white;
+    list-style: none;
+    font-weight:normal;
+    font-size: 15px;
+    margin-left: -40px;
+    
+}
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 1000px){
+    .home_burger {
+        display: block;
+        width: 50px;
+        margin-right: 2rem;
+        margin-top: 4%;
+        transition: 1s;
+    }
+    .home_close{
+        display: none;
+        width: 50px;
+        margin-right: 2rem;
+        margin-top: 4%;
+        transition: cubic-bezier(0, 1.21, 0.25, 1);
+
+    }
+    #menu {
+        display: none;
+        transform: 2s;
+    }
+  
+    
+    .menu {
+        background-color: #FFF;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-top: 90px;
+        height: 100vh;
+        width: 100%;
+    }
+    .menu-liste{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        right: auto;
+        line-height: 40px;
+    }
+    
+}
+
+
+@media screen and (max-width: 500px){
+#logo {
+    width: 230px;
+    margin-top: 3%;
+}
+.intro{
+
+    font-size: 39px;
+      
+  }
+.skills-section{
+    margin-top: 1070px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 600px;
+    
+}
+.hireMe{
+    margin: auto;
+    margin-top: 60px;
+    width: 50%;
+    font-size: 42px;
+    text-align: center;
+    background-color: white;
+    color:  #1D53AE; 
+    border-radius:29px;
+    padding: .4em .7em;
+    
+
+}
+.card{
+    width: 80%;
+    height: 440px;
+    margin-top: 40px;
+    background-color: white;
+    box-shadow: 4px 4px 4px 4px#888888;
+    margin: auto;
+    
+}
+.project-cards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.project-card{
+    width: 80%;
+    height: 300px;
+    background-color: white;
+    margin: auto;
+}
+.projects{
+    margin-top: 2040px;
+    height: auto;
+}
+.contact-section{
+    position: absolute;
+    width: 100%;
+    height: 630px;
+    background-color: #dde9f0;
+    margin-top:  3330px;
+}
+.contact-form{
+    width: 80%;
+
+}
+.container{
+    margin-right: -20px;
+}
+.introduction-section{
+    height: 700px;
+}
+.footer{
+    width: 100%;
+    height: 520px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    background-color:#3A5768;
+    margin: auto;
+    margin-top:  3950px;
+    
+}
+.footer-content{
+    margin: auto;
+    width: 60%;
+}
+.footer-content-1{
+    display: none;
+}
+
+
+    
+}
+

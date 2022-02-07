@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;;
+}
+
+body{
+    background-color: #EDF5FA;
+}
+
+.title-container{
+    width: 100%;
+    height: 300px;
+    background-color: #3A5768;
+}
+.blog-container{
+    width: 60%;
+    height: auto;
+    min-height: 40px;
+    background-color: white;
+    border-radius: 19px;
+    margin: auto;
+    margin-top: -180px;
+    margin-bottom: 150px;
+    box-shadow: 1px 1px 8px 2px #888888;
+}
+.blog-title-section{
+    background-color: #5792F5;
+    width: 100%;
+    height: 80px;
+    border-top-left-radius: 19px;
+    border-top-right-radius: 19px;
+}
+.blog-title{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding-top: 30px;
+}
+/*.posts-Container{
+    display: flex;
+    justify-content:center  ;
+    flex-direction:column; 
+   border: 1px solid black;
+}*/
+#hhh{
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+}
+.post-container{
+    /*border: 1px solid black;*/
+    width: 32%;
+    height: 300px;
+    margin-top: 4px;
+    margin-bottom: 40px;
+    padding-bottom: 4px;
+    overflow-wrap: break-word;
+    background-color: #edf2f3;
+    border-radius: 12px;
+}
+.feature-img-container{
+    width: 97%;
+    height: 69%;
+   /* border: 1px solid black;*/
+    margin: auto;
+    margin-top: 0px;
+}
+.img5{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px 12px 0px 0px;
+
+}
+.post-title{
+    font-size: 20px;
+    padding-left: 5px;
+    margin-top: -.1px;
+    width: 100%;
+}
+.reaction-box{
+    display: none;
+   /* border: 1px solid black;*/
+    width: 97%;
+    height: 6%;
+    margin-top: -9px;
+    margin-left: 5px;
+}
+.reaction-btn, .counter{
+    margin-left: 9px;
+}
+.reaction-btn:hover{
+    color: red;
+}
+.counter{
+    font-size: 12px;
+}
+
+@media screen and (max-width: 1000px){
+    .blog-container{
+        width: 70%;
+    }
+    .reaction-box{
+        margin-top: -23px;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 500px){
+    .blog-container{
+        width: 90%;
+        height: auto    ;
+    }
+    .reaction-box{
+        margin-top: -22px;
+    }
+
+}
+
+
+@media screen and (max-width: 360px){
+    .blog-container{
+        width: 100%;
+        height: auto;
+    }
+    .reaction-box{
+        margin-top: -22px;
+    }
+
+}
