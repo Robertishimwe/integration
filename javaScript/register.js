@@ -113,7 +113,7 @@ let users = {
         }
         else if(password1 != password2){
           errorMessage.style.display="block";
-          errorMessage.innerText = "The password and confirmation password do not match";
+          errorMessage.innerText = "Password doesn't match";
           return;
         }
         // else{
