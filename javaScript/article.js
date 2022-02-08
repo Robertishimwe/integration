@@ -49,18 +49,12 @@ async function fullPost(){
     console.log(SinglePost);
     
 
-// let fullPost = () =>{
-// for(let i=0;i<localStorage.length;i++){
-    //    key = localStorage.key(i)
-    //   console.log(key)
 
-
-// }
 
  let displayer = document.getElementById("hhh");
 
-//  let arr = JSON.parse(localStorage.getItem(arr2));
-//  console.log("mmmm",arr)
+// full article variables
+
  let title = SinglePost.articles.title;
  let img   = SinglePost.articles.ImageLink;
  let articleBody = SinglePost.articles.articleBody;
@@ -344,6 +338,33 @@ body{
 displayer.innerHTML += `${fullarticle}`;
 }
 
+// like function
+const liking = () => {
+
+
+    let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
+    articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/like/${currentPostId}`
+
+
+   const UserRequestOptions = {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+
+    };
+    fetch(articleUrl, UserRequestOptions)
+
+          
+    .then(response => response.json())
+    .then(data => {console.log(data)})
+
+
+
+}
+
+
+
+
+
 // let myID = localStorage.getItem("currentPostId");
 // let reg = /\d+(\w)\d+/
 // let myID3 = myID.match(reg);
@@ -391,7 +412,43 @@ displayer.innerHTML += `${fullarticle}`;
 // //end of liking operation
 
 fullPost()
+
+
+const createCommet = async () => {
+let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
+articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${currentPostId}`
+
+let response = await fetch(articleUrl)
+    const Commentdisplayer = document.querySelector(".kk");
+    const SinglePost = await response.json();
+    const setOfComments = SinglePost.articles.Comments;
+
+    for(let i=0;i<setOfComments.length;i++){
+        console.log(setOfComments[i])
+
+
+
+
+    let commmentTemplete = `
+      <div class="comment-container"><br/>
+            <div class="sendName">
+                <p id="sendName">${setOfComments[i].USERNAME}</p>
+            </div>
+            <div class="commentBody">
+                <p id="commentBody">${setOfComments[i].COMMENT} </p>
+            </div><br/>
     
+        </div>
+      
+      
+      `
+      Commentdisplayer.innerHTML += commmentTemplete;
+
+
+
+}
+}
+
 // fullPost()
 
 
