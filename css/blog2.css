@@ -102,6 +102,9 @@ body{
     .reaction-box{
         margin-top: -23px;
     }
+    #hhh{
+        flex-wrap: wrap;
+    }
 
 
 }

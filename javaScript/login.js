@@ -133,18 +133,18 @@ fetch('https://my-brand-api-v2.herokuapp.com/api/user/login', UserRequestOptions
 
   if(data.userData.Role == "admin"){
 
-    setTimeout(() => { location = "../html/control_panel.html" }, 3000);
+    location = "../html/control_panel.html"
 
   }else if(data.userData.Role == "user"){
 
-    setTimeout(() => { location = "../html/blogTest.html" }, 3000);
+    location = "../html/blogTest.html"
 
   }
   
 
 
 
-  console.log(data)
+  console.log(data.userData.Role)
 
 
 

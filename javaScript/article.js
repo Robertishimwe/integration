@@ -1,24 +1,24 @@
-let CurrentUser = JSON.parse(localStorage.getItem('currentLoggedIn'));
-commenter = CurrentUser.storedUserName;
-console.log("gggggggggg",CurrentUser)
+// let CurrentUser = JSON.parse(localStorage.getItem('currentLoggedIn'));
+// commenter = CurrentUser.storedUserName;
+// console.log("gggggggggg",CurrentUser)
 
 
-let createCommet = () => {
-   //key generator
+// let createCommet = () => {
+//    //key generator
 
-// first part of the key
+// // first part of the key
 
-let keySectionOne = Math.floor(Math.random() * (9000000-100000)+100000);
-// second part of the key
-let alpha = ["a","b","c","d"];
-let as = Math.floor(Math.random()*(3-0)+0)
-let keySectionTwo = alpha[as]
-// third part of the key
+// let keySectionOne = Math.floor(Math.random() * (9000000-100000)+100000);
+// // second part of the key
+// let alpha = ["a","b","c","d"];
+// let as = Math.floor(Math.random()*(3-0)+0)
+// let keySectionTwo = alpha[as]
+// // third part of the key
 
-let keySectionThree = Math.floor(Math.random() * (90-10)+10);
-//final key
+// let keySectionThree = Math.floor(Math.random() * (90-10)+10);
+// //final key
 
-let key = `${keySectionOne}${keySectionTwo}${keySectionThree}`;
+// let key = `${keySectionOne}${keySectionTwo}${keySectionThree}`;
 
 
 
@@ -27,41 +27,47 @@ let key = `${keySectionOne}${keySectionTwo}${keySectionThree}`;
 
 
 
-    commenterBody =  document.getElementById("commentBody").value;
-     singleComment = {
-        commenterName: `${commenter}`,
-        commenterBody: `${commenterBody}`,
-        type:`comment`,
-        parentPost:fID
+//     commenterBody =  document.getElementById("commentBody").value;
+//      singleComment = {
+//         commenterName: `${commenter}`,
+//         commenterBody: `${commenterBody}`,
+//         type:`comment`,
+//         parentPost:fID
         
-     } 
- localStorage.setItem(key, JSON.stringify(singleComment))
- location.reload()
-    }
+//      } 
+//  localStorage.setItem(key, JSON.stringify(singleComment))
+//  location.reload()
+//     }
 
 ///////////////////////end of comment creation\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+async function fullPost(){
+    let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
+    articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${currentPostId}`
+    let response = await fetch(articleUrl)
+    const SinglePost = await response.json();
+    console.log(SinglePost);
+    
 
-
-let fullPost = () =>{
-for(let i=0;i<localStorage.length;i++){
-       key = localStorage.key(i)
+// let fullPost = () =>{
+// for(let i=0;i<localStorage.length;i++){
+    //    key = localStorage.key(i)
     //   console.log(key)
 
 
-}
+// }
 
  let displayer = document.getElementById("hhh");
- let arr2 = JSON.parse(localStorage.getItem('currentPostId'));
- let arr = JSON.parse(localStorage.getItem(arr2));
- console.log("mmmm",arr)
- let title = arr.titleInfo;
- let img   = arr.imgUrlInfo;
- let articleBody = arr.fullArticleInfo;
-     Comments = arr.Comments;
-     like = parseInt(arr.likes);
- let type = arr.type;
-console.log("musenyeri"+like)
+
+//  let arr = JSON.parse(localStorage.getItem(arr2));
+//  console.log("mmmm",arr)
+ let title = SinglePost.articles.title;
+ let img   = SinglePost.articles.ImageLink;
+ let articleBody = SinglePost.articles.articleBody;
+    //  Comments = arr.Comments;
+     like = SinglePost.articles.likes.length;
+//  let type = arr.type;
+// console.log("musenyeri"+like)
 
 fullarticle = `
 
@@ -298,6 +304,7 @@ body{
         <div class="reaction">
           Reaction: <img src="../images/like.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn"> <span class="like-counter">${like}</span>
       </div>
+      <p>hello</p>
 
     </div>
     <!-- <div class="reaction">
@@ -334,105 +341,105 @@ body{
     </div>
 
 `
-displayer.innerHTML += fullarticle;
+displayer.innerHTML += `${fullarticle}`;
 }
 
-let myID = localStorage.getItem("currentPostId");
-let reg = /\d+(\w)\d+/
-let myID3 = myID.match(reg);
-let fID = myID3[0];
-console.log("you made it bro:"+fID)
+// let myID = localStorage.getItem("currentPostId");
+// let reg = /\d+(\w)\d+/
+// let myID3 = myID.match(reg);
+// let fID = myID3[0];
+// console.log("you made it bro:"+fID)
 
 
-function liking(){
-    for(let i=0;i<localStorage.length;i++){
-        let key = localStorage.key(i)
-        // console.log(key)
-
-
-
-
-    //let displayer = document.getElementById("hhh");
-    let arr = JSON.parse(localStorage.getItem('currentPost'))
-    let title = arr.titleInfo;
-    let img   = arr.imgUrlInfo;
-    let Comments = arr.Comments;
-    let like = parseInt(arr.likes);
-    let fullArticle = arr.fullArticleInfo;
+// function liking(){
+//     for(let i=0;i<localStorage.length;i++){
+//         let key = localStorage.key(i)
+//         // console.log(key)
 
 
 
 
-    let articleData = {
-            titleInfo: `${title}`,
-            fullArticleInfo: `${fullArticle}`,
-            imgUrlInfo: `${img}`,
-            Comments:Comments,
-            type:`posts`,
-            likes:like+1,
-        }
-        console.log(Comments)
-console.log("hello"+articleData)
+//     //let displayer = document.getElementById("hhh");
+//     let arr = JSON.parse(localStorage.getItem('currentPost'))
+//     let title = arr.titleInfo;
+//     let img   = arr.imgUrlInfo;
+//     let Comments = arr.Comments;
+//     let like = parseInt(arr.likes);
+//     let fullArticle = arr.fullArticleInfo;
 
-        localStorage.setItem(fID, JSON.stringify(articleData))
-        location.reload();
-        fullPost();
 
-    }
-}
 
-//end of liking operation
 
-        
-    
+//     let articleData = {
+//             titleInfo: `${title}`,
+//             fullArticleInfo: `${fullArticle}`,
+//             imgUrlInfo: `${img}`,
+//             Comments:Comments,
+//             type:`posts`,
+//             likes:like+1,
+//         }
+//         console.log(Comments)
+// console.log("hello"+articleData)
+
+//         localStorage.setItem(fID, JSON.stringify(articleData))
+//         location.reload();
+//         fullPost();
+
+//     }
+// }
+
+// //end of liking operation
+
 fullPost()
+    
+// fullPost()
 
 
-function commmenting(){
+// function commmenting(){
 
-    for(let i=0;i<localStorage.length;i++){
-        key = localStorage.key(i)
-       console.log(key)
-
-
-   let Commentdisplayer = document.querySelector(".kk");
-   let arr = JSON.parse(localStorage.getItem(key))
-   let commenterName = arr.commenterName;
-   let commentBody   = arr.commenterBody;
-   let parentPost = arr.parentPost;
-   let type = arr.type;
-   //  let reg = "/\d{7-6}\w*\d{2}/";
-   //  let answer = key.test(r);
-   //  console.log(answer)
+//     for(let i=0;i<localStorage.length;i++){
+//         key = localStorage.key(i)
+//        console.log(key)
 
 
+//    let Commentdisplayer = document.querySelector(".kk");
+//    let arr = JSON.parse(localStorage.getItem(key))
+//    let commenterName = arr.commenterName;
+//    let commentBody   = arr.commenterBody;
+//    let parentPost = arr.parentPost;
+//    let type = arr.type;
+//    //  let reg = "/\d{7-6}\w*\d{2}/";
+//    //  let answer = key.test(r);
+//    //  console.log(answer)
 
-   if(type == `comment` && fID == parentPost) {
 
-  let commmentTemplete = `
-  <div class="comment-container"><br/>
-        <div class="sendName">
-            <p id="sendName">${commenterName}</p>
-        </div>
-        <div class="commentBody">
-            <p id="commentBody">${commentBody} </p>
-        </div><br/>
 
-    </div>
+//    if(type == `comment` && fID == parentPost) {
+
+//   let commmentTemplete = `
+//   <div class="comment-container"><br/>
+//         <div class="sendName">
+//             <p id="sendName">${commenterName}</p>
+//         </div>
+//         <div class="commentBody">
+//             <p id="commentBody">${commentBody} </p>
+//         </div><br/>
+
+//     </div>
   
   
-  `
-  Commentdisplayer.innerHTML += commmentTemplete;
+//   `
+//   Commentdisplayer.innerHTML += commmentTemplete;
 
 
 
-   }
+//    }
 
 
-}
+// }
 
-}
-commmenting();
+// }
+// commmenting();
 
 
 
