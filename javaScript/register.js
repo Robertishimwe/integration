@@ -34,6 +34,12 @@ let users = {
   // type:"Singleuser",
   // userID:key
 }
+
+
+error_message.style.display="block";
+error_message.innerHTML =`
+
+<img src="../images/Spinner.gif" alt="loading..." width="30px" height="30px">` ;
 // let AdminUsers={
 //   userName:"admin",
 //   userEmail:"andela@andela.com",
@@ -142,9 +148,21 @@ let users = {
           
             .then(response => response.json())
             .then(data => {console.log(data)
-            
+            if(data.Message == "Account created successfully"){
+             
+
+              setTimeout(() => {
+
+                location = "../html/login.html";
+
+
+              }, 3000);
+            }
             errorMessage.style.display="block";
             errorMessage.innerText = JSON.stringify(data.Message);
+
+           
+         
             
             
             });

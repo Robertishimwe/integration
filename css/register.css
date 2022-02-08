@@ -56,6 +56,7 @@ a:hover{
     margin: auto;
     margin-top: -6px;
     transition: 1s;
+    border-radius: 6px;
     
 }
 .btn-text{
@@ -73,7 +74,8 @@ a:hover{
     transition: 1s;
     border: 1px solid #1D53AE;
 }
-.nothaveAccount{
+.nothaveAccount2{
+    display: none;
     margin: auto;
     padding-left: 7%;
 }

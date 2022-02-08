@@ -41,13 +41,14 @@ body{
     font-family: 'Roboto', sans-serif;
 
 }
-.error_message{
+.error_message, .loading{
     text-align: center;
     display: none;
     background-color: red;
     width: 70%;
     margin: auto;
     transition: 1s;
+    border-radius: 6px;
     
 }
 .btn-text{

@@ -21,6 +21,13 @@ let regex = /\w+@[a-zA-Z]+\.[com|net|rw|org|edu|co|shop|air]/;
 let regexPass = /\w|\d/;
 let passwordValidity = regexPass.test(password);
 let emailValidity = regex.test(userEmail);
+
+
+error_message.style.display="block";
+error_message.innerHTML =`
+
+<img src="../images/Spinner.gif" alt="loading..." width="30px" height="30px">` ;
+
 // let adminEmail = localStorage.getItem("adminEmail")
 // let adminPass =  localStorage.getItem("adminPass")
 
@@ -114,12 +121,31 @@ else if(userEmail == ""){
   
 
 fetch('https://my-brand-api-v2.herokuapp.com/api/user/login', UserRequestOptions)
+
           
  .then(response => response.json())
  .then(data => {console.log(data)
 
   error_message.style.display="block";
   error_message.innerText = JSON.stringify(data.Message);
+  sessionStorage.setItem("LoggedIn",data.userData)
+  sessionStorage.setItem("LoggedIn",JSON.stringify(data.userData))
+
+  if(data.userData.Role == "admin"){
+
+    setTimeout(() => { location = "../html/control_panel.html" }, 3000);
+
+  }else if(data.userData.Role == "user"){
+
+    setTimeout(() => { location = "../html/blogTest.html" }, 3000);
+
+  }
+  
+
+
+
+  console.log(data)
+
 
 
 });
