@@ -3,7 +3,7 @@ const permision = sessionStorage.getItem("LoggedIn")
     location = "../html/login.html"
  }
  else if(JSON.parse(permision).Role == "admin"){
-    alert("welcome to admin panel")  
+    console.log("test")  
  }else{
     
     console.log(permision)
