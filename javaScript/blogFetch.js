@@ -1,7 +1,7 @@
 
 let viewPost=(postId)=>{
-  console.log("mee:"+postId);
-  console.log("hello world");
+//   console.log("mee:"+postId);
+//   console.log("hello world");
 let Posting = localStorage.getItem(postId);
 localStorage.setItem("currentPost",Posting)
 localStorage.setItem("currentPostId",JSON.stringify(postId))
