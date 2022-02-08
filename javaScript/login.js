@@ -144,7 +144,7 @@ fetch('https://my-brand-api-v2.herokuapp.com/api/user/login', UserRequestOptions
 
 
 
-  console.log(data)
+  console.log(data.userData.Role)
 
 
 
