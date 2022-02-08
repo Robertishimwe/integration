@@ -101,12 +101,12 @@ body{
     background-color: #3A5768;
 }
 .article-container{
-    width: 100%;
+    width: 50%;
     height: 100%;
     background-color: white;
     border-radius: 19px;
     margin: auto;
-    margin-top: -300px;
+    margin-top: -250px;
     margin-bottom: 150px;
     box-shadow: 1px 1px 8px 2px #888888;
 }
