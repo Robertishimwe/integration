@@ -298,8 +298,6 @@ body{
         <div class="reaction">
           Reaction: <img src="../images/like.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn"> <span class="like-counter">${like}</span>
       </div>
-      <p>hello</p>
-
     </div>
     <!-- <div class="reaction">
         reaction: <img src="../images/like.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn"> <span class="like-counter">${2+3}</span>
