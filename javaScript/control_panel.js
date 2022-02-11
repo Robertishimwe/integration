@@ -1,13 +1,8 @@
-
-
 document.querySelector("body").innerHTML = `<img src="../images/Spinner.gif" alt="loading...">`
-
-
-
-
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Sending request to the server<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 const Options = {
    method: 'GET',
-   headers: { 'authantication': JSON.parse(sessionStorage.getItem('token'))},
+   headers: { 'token': JSON.parse(sessionStorage.getItem('token'))},
 };
 
 
@@ -50,14 +45,7 @@ if(data.Admin_validite == true){
 
         </div>
     
-    <script src="../javaScript/menu_dashbaod.js"></script>
-    <script src="../javaScript/newArticle.js"></script>
-    <script src="../javaScript/profile.js"></script>
-    <script src="../javaScript/subscription.js"></script>
-    <script src="../javaScript/location.js"></script>
-    <script src="../javaScript/articleListe.js"></script>
-    <script src="../javaScript/messageFetcher.js"></script>
-    <script src="../javaScript/control_panel.js"></script>
+
     
 </body>
 </html>
@@ -69,7 +57,7 @@ if(data.Admin_validite == true){
     `
 
 }else{
-    document.querySelector("body").innerHTML = `<img src="../images/Spinner.gif" alt="loading...">`
+    document.querySelector("body").innerHTML = `<img src="../images/image5.jpg" alt="loading...">`
 }
    
 })
