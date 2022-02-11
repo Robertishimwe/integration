@@ -12,7 +12,7 @@ console.log("robert:"+Posting)
 
 async function blogFetch(){
 let response = await fetch("https://my-brand-api-v2.herokuapp.com/api/articles")
-const allPosts = await response.json();
+const allPosts = await response.json(); 
 console.log(allPosts);
 
 //looping through

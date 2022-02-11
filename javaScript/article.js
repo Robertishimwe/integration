@@ -1,3 +1,59 @@
+const createCommet = async () => {
+    let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
+    articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${currentPostId}`
+    
+    
+    let response = await fetch(articleUrl)
+        const Commentdisplayer = document.querySelector("#kk");
+        const SinglePost = await response.json();
+        const setOfComments = SinglePost.articles.Comments;
+    
+        for(let i=0;i<setOfComments.length;i++){
+            console.log(setOfComments[i])
+    
+    
+    
+        let commmentTemplete = `
+          <div class="comment-container"><br/>
+                <div class="sendName">
+                    <p id="sendName">${setOfComments[i].USERNAME}</p>
+                </div>
+                <div class="commentBody">
+                    <p id="commentBody">${setOfComments[i].COMMENT} </p>
+                </div><br/>
+        
+            </div>
+          
+          
+          `
+          Commentdisplayer.innerHTML += commmentTemplete;
+    
+    
+    
+    }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // let CurrentUser = JSON.parse(localStorage.getItem('currentLoggedIn'));
 // commenter = CurrentUser.storedUserName;
 // console.log("gggggggggg",CurrentUser)
@@ -48,7 +104,7 @@ async function fullPost(){
     const SinglePost = await response.json();
     console.log(SinglePost);
     
-
+    
 
 
  let displayer = document.getElementById("hhh");
@@ -144,10 +200,16 @@ body{
 .post-body{
 
    /*border: 1px solid black;*/
+    font-size:12px
     width: 95%;
     height: auto;
     margin: auto;
     margin-top: 4px;
+}
+.post-text{
+    font-size:14px;
+    padding-left:8px;
+    
 }
 .like-btn{
     width: 20px;
@@ -224,7 +286,11 @@ body{
 }
 #sendName{
     text-align: center;
-    font-size: x-large;
+    font-size: large;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    padding-top:6px
 }
 .commentBody{
     background-color: white;
@@ -293,7 +359,7 @@ body{
         </div>
     </div>
     <div class="post-body">
-        <p>${articleBody}</p>
+        <p class="post-text">${articleBody}</p>
 
         <div class="reaction">
           Reaction: <img src="../images/like.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn"> <span class="like-counter">${like}</span>
@@ -313,8 +379,8 @@ body{
         <input type="submit" value="Submit" class="comment-items comment-btn ali" onclick="createCommet()" >
 
     </div>
-    <div class="kk">
-  <!--<div class="comment-container"><br/>
+    <div id="kk">
+<!--<div class="comment-container"><br/>
       <div class="sendName">
           <p id="sendName">Honore</p>
       </div>
@@ -334,6 +400,7 @@ body{
 
 `
 displayer.innerHTML += `${fullarticle}`;
+createCommet()
 }
 
 // like function
@@ -412,40 +479,6 @@ const liking = () => {
 fullPost()
 
 
-const createCommet = async () => {
-let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
-articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${currentPostId}`
-
-let response = await fetch(articleUrl)
-    const Commentdisplayer = document.querySelector(".kk");
-    const SinglePost = await response.json();
-    const setOfComments = SinglePost.articles.Comments;
-
-    for(let i=0;i<setOfComments.length;i++){
-        console.log(setOfComments[i])
-
-
-
-
-    let commmentTemplete = `
-      <div class="comment-container"><br/>
-            <div class="sendName">
-                <p id="sendName">${setOfComments[i].USERNAME}</p>
-            </div>
-            <div class="commentBody">
-                <p id="commentBody">${setOfComments[i].COMMENT} </p>
-            </div><br/>
-    
-        </div>
-      
-      
-      `
-      Commentdisplayer.innerHTML += commmentTemplete;
-
-
-
-}
-}
 
 // fullPost()
 
