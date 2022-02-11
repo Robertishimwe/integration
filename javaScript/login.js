@@ -128,16 +128,17 @@ fetch('https://my-brand-api-v2.herokuapp.com/api/user/login', UserRequestOptions
 
   error_message.style.display="block";
   error_message.innerText = JSON.stringify(data.Message);
-  sessionStorage.setItem("LoggedIn",data.userData)
-  sessionStorage.setItem("LoggedIn",JSON.stringify(data.userData))
+  // sessionStorage.setItem("LoggedIn",data.userData)
+  sessionStorage.setItem("token",JSON.stringify(data.token))
+  let permission = sessionStorage.getItem("token")
 
-  if(data.userData.Role == "admin"){
+  if(data.role == 'admin'){
 
-    location = "../html/control_panel.html"
+  setTimeout(()=>{  location = "../html/control_panel.html"},3000)
 
-  }else if(data.userData.Role == "user"){
+  }else if(data.role == 'user'){
 
-    location = "../html/blogTest.html"
+    setTimeout(()=>{  location = "../html/blogTest.html"},3000)
 
   }
   
