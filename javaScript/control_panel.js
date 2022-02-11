@@ -57,7 +57,7 @@ if(data.Admin_validite == true){
     `
 
 }else{
-    document.querySelector("body").innerHTML = `<img src="../images/image5.jpg" alt="loading...">`
+    location = "../html/401.html"
 }
    
 })
