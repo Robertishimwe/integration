@@ -89,14 +89,13 @@ const liking = () => {
 
 
     fetch(`https://my-brand-api-v2.herokuapp.com/api/articles/like/${currentPostId}`, likeOptions)
-
-          
-    .then(console.log("like sent"))
     
-
-
+    location.reload();
 
 }
+
+
+
 
 
 
