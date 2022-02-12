@@ -138,7 +138,7 @@ fetch('https://my-brand-api-v2.herokuapp.com/api/user/login', UserRequestOptions
 
   }else if(data.role == 'user'){
 
-    setTimeout(()=>{  location = "../html/blogTest.html"},3000)
+    location = "../html/blogTest.html"
 
   }
   
