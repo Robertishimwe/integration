@@ -1,4 +1,7 @@
-const createCommet = async () => {
+//>>>>>>>>>>>>>>>>>>>>>>>>>fetching Commet<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+const fetchingCommet = async () => {
     let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
     articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${currentPostId}`
     
@@ -16,10 +19,10 @@ const createCommet = async () => {
         let commmentTemplete = `
           <div class="comment-container"><br/>
                 <div class="sendName">
-                    <p id="sendName">${setOfComments[i].USERNAME}</p>
+                    <p id="sendName">${setOfComments[i].username}</p>
                 </div>
                 <div class="commentBody">
-                    <p id="commentBody">${setOfComments[i].COMMENT} </p>
+                    <p id="commentBody">${setOfComments[i].comment} </p>
                 </div><br/>
         
             </div>
@@ -33,10 +36,42 @@ const createCommet = async () => {
     }
     }
     
+//>>>>>>>>>>>>>>>>>>>>>>>>>Posting a comment<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
+const createCommet = async () => {
+commentBody = document.getElementById("commentBody").value;
+console.log("coment body",commentBody)
+const commentOptions = {
+    
+   method: 'PATCH',
+   headers: {
+    'Content-Type': 'application/json',
+    'token': JSON.parse(sessionStorage.getItem('token'))
+
+  },
+    body: JSON.stringify({
+      
+        "comments":commentBody
+        
+     })
+};
+console.log("coment body",commentBody)
+let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
+fetch(`https://my-brand-api-v2.herokuapp.com/api/articles/comments/${currentPostId}`, commentOptions)
+.then(console.log("request send"))
+.catch(console.log("problen"))
 
 
+setTimeout(() => {
+
+    location.reload();
+
+
+  }, 10000);
+
+
+}
 
 
 
@@ -400,7 +435,7 @@ body{
 
 `
 displayer.innerHTML += `${fullarticle}`;
-createCommet()
+fetchingCommet()
 }
 
 // like function
