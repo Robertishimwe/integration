@@ -57,22 +57,46 @@ const commentOptions = {
      })
 };
 console.log("coment body",commentBody)
+
 let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
+
 fetch(`https://my-brand-api-v2.herokuapp.com/api/articles/comments/${currentPostId}`, commentOptions)
-.then(console.log("request send"))
-.catch(console.log("problen"))
-
-
-setTimeout(() => {
 
     location.reload();
 
+}
 
-  }, 10000);
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>liking post<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+const liking = () => {
+
+
+    let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
+    articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/like/${currentPostId}`
+
+
+    const likeOptions = {
+    
+        method: 'PATCH',
+        headers: {
+         'Content-Type': 'application/json',
+         'token': JSON.parse(sessionStorage.getItem('token'))
+     
+       },
+    }
+
+
+
+    fetch(`https://my-brand-api-v2.herokuapp.com/api/articles/like/${currentPostId}`, likeOptions)
+
+          
+    .then(console.log("like sent"))
+    
+
 
 
 }
-
 
 
 
@@ -439,27 +463,6 @@ fetchingCommet()
 }
 
 // like function
-const liking = () => {
-
-
-    let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
-    articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/like/${currentPostId}`
-
-
-   const UserRequestOptions = {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-
-    };
-    fetch(articleUrl, UserRequestOptions)
-
-          
-    .then(response => response.json())
-    .then(data => {console.log(data)})
-
-
-
-}
 
 
 
