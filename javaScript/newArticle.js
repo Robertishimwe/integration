@@ -106,7 +106,7 @@ function newArticle() {
                 <label for="body" class="cen">Full Article:</label><br/>
                 <textarea name="fullart" value="memmeme" id="fullart" cols="30" rows="5" class="cen" required></textarea><br/>
                 <label for="photo" class="cen">Upload featured image:</label><br/>
-                <input type="url" id="imgUrl" class="cen" required>
+                <input type="file" id="imgUrl" class="cen" required>
                 <input type="submit" value="POST" class="btn1" onclick="meee()">
             </form>
 
