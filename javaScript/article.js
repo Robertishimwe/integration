@@ -62,14 +62,17 @@ let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
 
 fetch(`https://my-brand-api-v2.herokuapp.com/api/articles/comments/${currentPostId}`, commentOptions)
 
-    location.reload();
+setTimeout(() => {location.reload()}, 5000);
+
+
+     
 
 }
 
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>liking post<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-const liking = () => {
+ const liking = async() => {
 
 
     let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
@@ -90,7 +93,7 @@ const liking = () => {
 
     fetch(`https://my-brand-api-v2.herokuapp.com/api/articles/like/${currentPostId}`, likeOptions)
     
-    location.reload();
+    setTimeout(() => {location.reload()}, 5000);
     
 
 }

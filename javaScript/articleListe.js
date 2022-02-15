@@ -1,14 +1,49 @@
+let deletePost=(postId) => {
+
+    articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${postId}`
 
 
-let deletePost=(postId)=>{
+    const deleteOptions = {
+    
+        method: 'DELETE',
+        headers: {
+         'Content-Type': 'application/json',
+         'token': JSON.stringify(sessionStorage.getItem('token'))
+     
+       },
+    }
+
+
+
+    fetch(articleUrl, deleteOptions)
+    
+    // location.reload();
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let deletePost=(postId)=>{
     //   console.log("mee:"+postId);
     //   console.log("hello world");
-    localStorage.removeItem(postId);
-    location.reload()
+    // localStorage.removeItem(postId);
+    // location.reload()
     // localStorage.setItem("currentPost",Posting)
     // console.log("robert:"+Posting)
     //  location = "../html/fullArticle.html";
-    }
+    // }
 
 
 // function meee() {
