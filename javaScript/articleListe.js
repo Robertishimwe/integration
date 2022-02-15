@@ -148,29 +148,47 @@ function articleListe() {
     //modify only below this line 
     
 
-    function art(){
+   async function art(){
         
+
+
+        let response = await fetch("https://my-brand-api-v2.herokuapp.com/api/articles")
+        const allPosts = await response.json(); 
+        console.log(allPosts);
+
+        for(let i=0;i<allPosts.length;i++){
+            let arr = allPosts[i];
+            let title = arr.title;
+            let img   = arr.ImageLink;
+            let articleBody = arr.articleBody;
+            let comments = arr.comments;
+            let like = parseInt(arr.likes);
+            let type = arr.type;
+          
+
+
+
     
 
             //looping through geolocation
-                for(let i=0;i<localStorage.length;i++){
-                     key = localStorage.key(i)
-                    console.log(key)
+                // for(let i=0;i<localStorage.length;i++){
+                    //  key = localStorage.key(i)
+                    // console.log(key)
                 
                      displayer = document.getElementById("result1");
-                     arr = JSON.parse(localStorage.getItem(key))
-                     title = arr.titleInfo;
-                     img   = arr.imgUrlInfo;
-                     articleBody = arr.fullArticleInfo;
-                     like = parseInt(arr.likes);
-                     type = arr.type;
+                    //  arr = JSON.parse(localStorage.getItem(key))
+                    //  title = arr.titleInfo;
+                    //  img   = arr.imgUrlInfo;
+                    //  articleBody = arr.fullArticleInfo;
+                    //  like = parseInt(arr.likes);
+                    //  type = arr.type;
                 
                     
             
-                     if(type == `posts` && key !=`currentPost`) {
+                     if(1>0) {
                  //console.log(long)
               
-            
+                 let myKey =await arr._id ;
 
          
 
@@ -180,8 +198,8 @@ function articleListe() {
             <input type="text" class="articleTitle" placeholder="helo world" value="${title}"></p>
             <textarea class="articleBody">${articleBody}</textarea>
             <div class="articleBtns">
-                <button type="submit" class="save" id= '${key}' onclick="saveChange('${key}')">Save</button>
-                <button type="submit" class="delete" id= '${key}' onclick="deletePost('${key}')">Delete</button>
+                <button type="submit" class="save" id= '${myKey}' onclick="saveChange('${myKey}')">Save</button>
+                <button type="submit" class="delete" id= '${myKey}' onclick="deletePost('${myKey}')">Delete</button>
 
             </div>
         </div>                

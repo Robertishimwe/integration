@@ -1,4 +1,9 @@
-document.querySelector("body").innerHTML = `<img src="../images/Spinner.gif" alt="loading...">`
+document.querySelector("body").innerHTML = `
+
+<img src="../images/Spinner.gif" alt="loading..." class="loaderIMG">
+
+`
+
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Sending request to the server<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 const Options = {
    method: 'GET',
@@ -26,7 +31,7 @@ if(data.Admin_validite == true){
     <link rel="shortcut icon" href="../images/logo3ff.svg" type="image/x-icon">
     <title>Control panel</title>
 </head>
-<body>
+<body onload="art()">
   <menu-bar></menu-bar>
      <div class="container">
          <div class="sideMenu">
