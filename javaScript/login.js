@@ -77,7 +77,7 @@ fetch('https://my-brand-api-v2.herokuapp.com/api/user/login', UserRequestOptions
 
   }else if(data.role == 'user'){
 
-    location = "../html/blogLogged.html"
+    location = "../html/blogTest.html"
 
   }
   

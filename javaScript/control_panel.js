@@ -36,12 +36,12 @@ if(data.Admin_validite == true){
      <div class="container">
          <div class="sideMenu">
             <table>
-            <tr><td onclick="profile()">Profile</td></tr>
+         <!--   <tr><td onclick="profile()">Profile</td></tr> -->
             <tr><td onclick="messageListe()">Message</td></tr>
-            <tr><td onclick="articleListe()">Articles liste</td></tr>
+            <tr><td onclick="articleListe()">Articles list</td></tr>
             <tr><td onclick="newArticle()">New article</td></tr>
-            <tr><td onclick="subscription()">Subscriptions</td></tr>
-            <tr><td onclick="locations()">Traffic Source</td></tr>
+          <!--  <tr><td onclick="subscription()">Subscriptions</td></tr>-->
+            <tr><td onclick="users()">Users list</td></tr>
             </table>  
           </div>
           <div class="objectContainer" id="board"></div>
