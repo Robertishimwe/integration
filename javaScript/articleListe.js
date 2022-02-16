@@ -1,21 +1,20 @@
-let deletePost=(postId) => {
+let deletePost=(myKey) => {
 
-    articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${postId}`
 
 
     const deleteOptions = {
     
         method: 'DELETE',
         headers: {
-         'Content-Type': 'application/json',
-         'token': JSON.stringify(sessionStorage.getItem('token'))
+        
+         'Token': JSON.parse(sessionStorage.getItem('token'))
      
        },
     }
 
 
 
-    fetch(articleUrl, deleteOptions)
+    fetch('https://my-brand-api-v2.herokuapp.com/api/articles/'+myKey, deleteOptions)
     
     // location.reload();
     
@@ -152,7 +151,7 @@ function articleListe() {
               padding-top:0;
           }
           .articleTitle{
-              margin-top:0px;
+              margin-top:20px;
           }
 
       </style>
@@ -230,7 +229,7 @@ function articleListe() {
         displayer.innerHTML += `<div class="articleContainer">
         <img src="${img}" class="articleImage">
         <div class="titleBodyButtons">
-            <input type="text" class="articleTitle" placeholder="helo world" value="${title}"></p>
+            <input type="text" class="articleTitle" value="${"title"}">
             <textarea class="articleBody">${articleBody}</textarea>
             <div class="articleBtns">
                 <button type="submit" class="save" id= '${myKey}' onclick="saveChange('${myKey}')">Save</button>

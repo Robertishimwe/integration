@@ -1,16 +1,3 @@
-// let AdminUsers = {
-//   userName:"admin",
-//   userEmail:"andela@andela.com",
-//   password:"Andela",
-//   type:"Singleuser",
-//   userID:"admin"
-// }
-
-
-//set admin email && password by default
-// localStorage.setItem("adminEmail","andela@andela.com")
-// localStorage.setItem("adminPass","Andela")
-// localStorage.setItem("admin",JSON.stringify(AdminUsers))
 
 
 function login(){
@@ -27,54 +14,6 @@ error_message.style.display="block";
 error_message.innerHTML =`
 
 <img src="../images/Spinner.gif" alt="loading..." width="30px" height="30px">` ;
-
-// let adminEmail = localStorage.getItem("adminEmail")
-// let adminPass =  localStorage.getItem("adminPass")
-
-  // administrator = (JSON.parse(localStorage.getItem("admin")))
-  // administratorEmail =  administrator.userEmail;
-  // administratorPass = administrator.password;
-// localStorage.setItem("admin",JSON.stringify(AdminUsers))
-// console.log(adminEmail)
-// console.log("pass:"+ passwordValidity)
-
-// console.log(administratorEmail)
-// console.log(administratorPass)
-
-
-// for(let i=0;i<localStorage.length;i++){
-//   keyy = localStorage.key(i)
-//   let arr = JSON.parse(localStorage.getItem(keyy))
-  
-  //  storedUserEmail= arr.userEmail;
-  //  storedUserPassword = arr.password;
-//    storedUserType = arr.type;
-//    storedUserId = arr.userID;
-//    storedUserName = arr.userName;
-
-
-    
-
-
-    
-//      if(userEmail == administratorEmail && password == administratorPass){
-//       location = "../html/control_panel.html"; 
-//     }
-
-// if(storedUserType == `Singleuser`) {
-
-// console.log(localStorage.getItem("admin"))
-   
-
-
-
-
-
-
-
-//end of declaration part
-
-//redirect to admin panel
 
 
 
