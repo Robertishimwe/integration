@@ -71,7 +71,7 @@ function meee() {
         })
      };
      
-     fetch('https://my-brand-api-v2.herokuapp.com/api/contact/send', UserRequestOptions)
+     fetch('https://my-brand-api-v2.herokuapp.com/api/articles/create', UserRequestOptions)
       
         .then(response => response.json())
         .then(data => {console.log(data)})
@@ -157,7 +157,7 @@ function newArticle() {
                 <textarea name="fullart" value="memmeme" id="fullart" cols="30" rows="5" class="cen" required></textarea><br/>
                 <label for="photo" class="cen">Upload featured image:</label><br/>
                 <input type="file" id="imgUrl" class="cen" required>
-                <input type="submit" value="POST" class="btn1" onclick="meee()">
+                <input type="button" value="POST" class="btn1" onclick="meee()">
             </form>
 
         </div>

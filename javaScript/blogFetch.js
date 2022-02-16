@@ -34,6 +34,7 @@ for(let i=0;i<allPosts.length;i++){
     let comments = arr.comments;
     let like = parseInt(arr.likes);
     let type = arr.type;
+    console.log(JSON.parse(img))
     //  let reg = "/\d{7-6}\w*\d{2}/";
     //  let answer = key.test(r);
     //  console.log(answer)
@@ -71,7 +72,7 @@ let myKey =await arr._id ;
     let temp = `
     <div class="post-container post1" id= '${myKey}' onclick="viewPost('${myKey}')">
     <div class="feature-img-container">
-     <img src="${img}" alt="featured image" class="img5" onclick="viewPost(${myKey})>
+     <img src="${JSON.parse(img)}" alt="featured image" class="img5" onclick="viewPost(${myKey})>
     </div>
     <p class="post-title" contenteditable="false">${title}</p>
     <div class="reaction-box">

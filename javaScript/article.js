@@ -417,7 +417,7 @@ body{
 
     <div class="post-container">
         <div class="feature-img-container">
-           <img src="${img}" alt="featured image" class="img5">
+           <img src="${JSON.parse(img)}" alt="featured image" class="img5">
         </div>
     </div>
     <div class="post-body">
