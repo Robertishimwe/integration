@@ -139,11 +139,18 @@ function articleListe() {
           }.delete:hover{
               background-color: rgb(204, 46, 46);
           }
-          .articleBody, .articleTitle{
+          .articleBody{
               width: 100%;
               margin-right:0;
               border: none;
               outline: none;
+          }
+          .articleTitle{
+            width: 100%;
+            margin-right:0;
+            border: none;
+            outline: none;
+
           }
           .articleBody{
               font-size: 10px;
