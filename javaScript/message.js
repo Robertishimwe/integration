@@ -1,30 +1,17 @@
-// Getting time stamp
-
-
-today = new Date();
-date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-dateTime = date+' '+time;
-console.log(dateTime)
+ 
 
 
 
 
-// unique key generator
 
-// first part of the key
 
-let keySectionone3 = Math.floor(Math.random() * (9000000-100000)+100000);
-// second part of the key
-let alphab3 = ["a","b","c","d"];
-let ass3 = Math.floor(Math.random()*(3-0)+0)
-let keySectiontwo3 = alphab[ass]
-// third part of the key
 
-let keySectionthree3 = Math.floor(Math.random() * (90-10)+10);
-//final key
 
-let keys3 = `${keySectionone3}${keySectiontwo3}${keySectionthree3}`;
+
+
+
+
+
 
 
 // actual function
@@ -43,18 +30,27 @@ if(sendName == '' || email == "" || message == ""){
    return;
 }else{
 
-   let messageInfo = {
-       sendName:`${sendName}`,
-       email: `${email}`,
-       message:`${message}`,
-       timeStamp:`${dateTime}`,
-       type : `message`
-       
-   }
-   console.log(messageInfo)
-   localStorage.setItem(keys3, JSON.stringify(messageInfo))
+   const UserRequestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+   
+         name:sendName,
+         email:email,
+         message:message
+   
+   
+      })
+   };
+   
+   fetch('https://my-brand-api-v2.herokuapp.com/api/contact/send', UserRequestOptions)
+    
+      .then(response => response.json())
+      .then(data => {console.log(data)})
+      console.log("deal done")
+   
 }
  
 
-   console.log(sendName,email)
+
 }
