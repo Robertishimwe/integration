@@ -66,7 +66,7 @@ fetch('https://my-brand-api-v2.herokuapp.com/api/user/login', UserRequestOptions
  .then(data => {console.log(data)
 
   error_message.style.display="block";
-  error_message.innerText = JSON.stringify(data.Message);
+  error_message.innerText =JSON.parse(data.Message);
   // sessionStorage.setItem("LoggedIn",data.userData)
   sessionStorage.setItem("token",JSON.stringify(data.token))
   let permission = sessionStorage.getItem("token")

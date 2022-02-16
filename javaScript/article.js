@@ -413,7 +413,7 @@ body{
 }
     </style>
     <div class="article-container" id="">
-    <div class="article-title-section"><p class="article-title">${title}</p></div>
+    <div class="article-title-section"><p class="article-title">${JSON.parse(title)}</p></div>
 
     <div class="post-container">
         <div class="feature-img-container">
@@ -421,7 +421,7 @@ body{
         </div>
     </div>
     <div class="post-body">
-        <p class="post-text">${articleBody}</p>
+        <p class="post-text">${JSON.parse(articleBody)}</p>
 
         <div class="reaction">
           Reaction: <img src="../images/like.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn"> <span class="like-counter">${like}</span>
