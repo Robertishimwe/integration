@@ -123,25 +123,43 @@ function messageListe(){
     //modify only below this line 
     
 
-    function art(){
+    
         
     
 
-            //looping through geolocation
-                for(let i=0;i<localStorage.length;i++){
-                     key = localStorage.key(i)
-                    console.log(key)
+        async function art(){
+
+            const MessageOptions = {
+                method: 'GET',
+                headers: { 'token': JSON.parse(sessionStorage.getItem('token'))},
+             };
+             
+            let response = await fetch("https://my-brand-api-v2.herokuapp.com/api/contact",MessageOptions)
+            const allMessage = await response.json(); 
+            const finalMessage = allMessage.ContactMessage
+            console.log(finalMessage);
+
+
+
+
+
+
+
+
+                for(let i=0;i<finalMessage.length;i++){
+                     
+                    console.log(finalMessage[i])
                 
                      displayer = document.getElementById("result1");
-                     arr = JSON.parse(localStorage.getItem(key))
-                     senderName = arr.sendName;
+                     arr = finalMessage[i]
+                     senderName = arr.name;
                      senderEmail= arr.email;
                      message = arr.message;
-                     timeStamp = arr.timeStamp;
-                     type = arr.type;
+                     timeStamp = arr.createDate;
+                     
                     
 
-              if(type == `message`) {
+              if(1 > 0) {
                  //console.log(long)
             
 
