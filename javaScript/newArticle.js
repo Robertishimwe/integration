@@ -19,21 +19,71 @@ let key = `${keySectionOne}${keySectionTwo}${keySectionThree}`;
 //end of key generator
 
 function meee() {
+
+
+
+    const img = document.getElementById("imgUrl")
+    const imglink =  img.files
+    
+     const reader =  new FileReader();
+     reader.readAsDataURL(imglink[0])
+     reader.addEventListener("load",()=>{
+        finalImage = reader.result
+        console.log(finalImage)
+     
+
+
+
+
+
     let title =document.getElementById("title").value;
     let fullArticle = document.getElementById("fullart").value;
-    let imgUrl = document.getElementById("imgUrl").value;
+    let imgUrl = finalImage;
 
 
-    let articleData = {
-        titleInfo: `${title}`,
-        fullArticleInfo: `${fullArticle}`,
-        imgUrlInfo: `${imgUrl}`,
-        Comments:{},
-        type:`posts`,
-        likes:0,
-    }
+    // let articleData = {
+    //     titleInfo: `${title}`,
+    //     fullArticleInfo: `${fullArticle}`,
+    //     imgUrlInfo: `${imgUrl}`,
+    //     Comments:{},
+    //     type:`posts`,
+    //     likes:0,
+    // }
+
+
+
+
+
+
+    const UserRequestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'token': JSON.parse(sessionStorage.getItem('token'))
+        
+          },
+        body: JSON.stringify({
+            title: `${title}`,
+            articleBody: `${fullArticle}`,
+            ImageLink: `${imgUrl}`,
+     
+     
+        })
+     };
+     
+     fetch('https://my-brand-api-v2.herokuapp.com/api/contact/send', UserRequestOptions)
+      
+        .then(response => response.json())
+        .then(data => {console.log(data)})
+        console.log("deal done")
+    
+
+
+
+
 
     localStorage.setItem(key, JSON.stringify(articleData))
+})
 }
 
 
