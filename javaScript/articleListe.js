@@ -87,7 +87,7 @@ function articleListe() {
              
            }
           .articlebox{
-              width: 50%;
+              width: 60%;
               height: 80vh;
               background-color: #dde9f0; 
               margin: auto;
@@ -110,7 +110,7 @@ function articleListe() {
           }
           .articleContainer{
               width: 100%;
-              height: 120px;
+              height: 170px;
               box-shadow:0px 0px 3px black;
               border:2px solid blue;
               border-right:none;
@@ -138,7 +138,22 @@ function articleListe() {
               background-color:rgb(4, 173, 240);
           }.delete:hover{
               background-color: rgb(204, 46, 46);
+          }.articleBdy{
+              width:100%
+              resize: none;
           }
+          textarea {
+            resize: none;
+            width:97%;
+            font-size: 16px;
+        }
+        .ed{
+            font-size: 19px;
+            height: 25%;
+        }
+        .er{
+            height: 50%;
+        }
           .articleBody{
               width: 100%;
               margin-right:0;
@@ -234,10 +249,15 @@ function articleListe() {
          
 
         displayer.innerHTML += `<div class="articleContainer">
-        <img src="${img}" class="articleImage">
+        <img src="${JSON.parse(img)}" class="articleImage">
         <div class="titleBodyButtons">
-            <input type="text" class="articleTitle" value="${"title"}">
-            <textarea class="articleBody">${articleBody}</textarea>
+            <!--<input type="text" class="articleTitle" value="${title}">
+            <input type="text" class="articleTile" value="${title}">-->
+           <!-- <input type="text" class="articleTitle" value="${title}">-->
+            <!--<textarea class="articleBody">${articleBody}</textarea>-->
+            <textarea class="articleBdy ed">${title}</textarea>
+            <textarea class="articleBdy er">${articleBody}</textarea>
+            
             <div class="articleBtns">
                 <button type="submit" class="save" id= '${myKey}' onclick="saveChange('${myKey}')">Save</button>
                 <button type="submit" class="delete" id= '${myKey}' onclick="deletePost('${myKey}')">Delete</button>

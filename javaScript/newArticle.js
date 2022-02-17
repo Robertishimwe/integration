@@ -23,13 +23,22 @@ function meee() {
 
 
     const img = document.getElementById("imgUrl")
+    const img2 = document.getElementById("imgUrl").value;
+    
     const imglink =  img.files
     
      const reader =  new FileReader();
      reader.readAsDataURL(imglink[0])
      reader.addEventListener("load",()=>{
         finalImage = reader.result
-        console.log(finalImage)
+        // ab = finalImage.split(",")
+        let ab = finalImage.toString(2)
+        console.log(ab)
+
+
+
+
+        
      
 
 
@@ -38,7 +47,7 @@ function meee() {
 
     let title =document.getElementById("title").value;
     let fullArticle = document.getElementById("fullart").value;
-    let imgUrl = finalImage;
+    let imgUrl = img2;
 
 
     // let articleData = {
@@ -59,7 +68,8 @@ function meee() {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'token': JSON.parse(sessionStorage.getItem('token'))
+            'token': JSON.parse(sessionStorage.getItem('token')),
+            
         
           },
         body: JSON.stringify({
