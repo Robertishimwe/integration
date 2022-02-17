@@ -25,6 +25,7 @@
 let sendName = document.querySelector("#name").value;
 let email = document.querySelector("#email").value;
 let message = document.querySelector("#message").value;
+let myForm = document.querySelector(".contact-form");
 
 if(sendName == '' || email == "" || message == ""){
    return;
@@ -48,6 +49,8 @@ if(sendName == '' || email == "" || message == ""){
       .then(response => response.json())
       .then(data => {console.log(data)})
       console.log("deal done")
+      myForm.reset()
+      
    
 }
  
