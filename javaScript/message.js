@@ -75,15 +75,51 @@ if(sendName == '' || email == "" || message == ""){
             // textNode = document.createTextNode("message sent")
             // popUp.appendChild(textNode)
             // document.querySelector(".comment-section").appendChild(popUp)
+            setTimeout(() => {
 
-            // console.log("working")
-            formload.innerHTML = `
+               location = "../html/login.html";
+
+
+             }, 3000);
+            console.log("working")
+            formload.innerHTML =`
+            <style>
+            .popup {
+               margin: 70px auto;
+               padding: 20px;
+               background: #fff;
+               border-radius: 5px;
+               width: 30%;
+               position: relative;
+               transition: all 5s ease-in-out;
+             }
+             
+             .popup h2 {
+               margin-top: 0;
+               color: #333;
+               font-family: Tahoma, Arial, sans-serif;
+             }
+            </style>
             
-            
-            
+            <div class="popup">
+		      <h2>Message sent successfully </h2>
+            </div>
+	
             
             
             `
+            setTimeout(() => {
+
+               location.reload();
+
+
+             }, 3000);
+            
+         
+            console.log("mee")
+            
+            
+            
          
          
         }
