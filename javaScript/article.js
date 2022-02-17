@@ -183,6 +183,18 @@ console.log(response.status)
 
 async function fullPost(){
     loggedChecker()
+    loader = document.getElementById("Loader");
+loader.innerHTML = `
+
+
+<style>
+.loader{
+   display:flex;
+   margin:auto;
+}
+</style>
+<img src="../images/Spinner.gif" class="loader">
+`
     let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
     articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${currentPostId}`
     let response = await fetch(articleUrl)
@@ -484,6 +496,7 @@ body{
     </div>
 
 `
+loader.style.display="none"
 displayer.innerHTML += `${fullarticle}`;
 fetchingCommet()
 

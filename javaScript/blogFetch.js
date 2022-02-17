@@ -8,6 +8,18 @@ localStorage.setItem("currentPostId",JSON.stringify(postId))
 }
 
 
+loader = document.getElementById("Loader");
+loader.innerHTML = `
+
+
+<style>
+.loader{
+   display:flex;
+   margin:auto;
+}
+</style>
+<img src="../images/Spinner.gif" class="loader">
+`
 async function blogFetch(){
 let response = await fetch("https://my-brand-api-v2.herokuapp.com/api/articles")
 const allPosts = await response.json(); 
@@ -58,6 +70,7 @@ let myKey =await arr._id ;
 
     </div>
     `
+    loader.style.display="none"
     displayer.innerHTML += temp;
     // displayer.innerHTML += temp;
 
