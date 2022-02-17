@@ -23,7 +23,6 @@ function meee() {
 
 
     const img = document.getElementById("imgUrl")
-    const img2 = document.getElementById("imgUrl").value;
     
     const imglink =  img.files
     
@@ -33,7 +32,7 @@ function meee() {
         finalImage = reader.result
         // ab = finalImage.split(",")
         let ab = finalImage.toString(2)
-        console.log(ab)
+        // console.log(ab)
 
 
 
@@ -47,7 +46,7 @@ function meee() {
 
     let title =document.getElementById("title").value;
     let fullArticle = document.getElementById("fullart").value;
-    let imgUrl = img2;
+    let imgUrl = finalImage;
 
 
     // let articleData = {
