@@ -12,7 +12,7 @@ const fetchingCommet = async () => {
         const setOfComments = SinglePost.articles.Comments;
     
         for(let i=0;i<setOfComments.length;i++){
-            console.log(setOfComments[i])
+            // console.log(setOfComments[i])
     
     
     
@@ -41,7 +41,7 @@ const fetchingCommet = async () => {
 
 const createCommet = async () => {
 commentBody = document.getElementById("commentBody").value;
-console.log("coment body",commentBody)
+// console.log("coment body",commentBody)
 const commentOptions = {
     
    method: 'PATCH',
@@ -56,7 +56,7 @@ const commentOptions = {
         
      })
 };
-console.log("coment body",commentBody)
+// console.log("coment body",commentBody)
 
 let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
 
@@ -164,7 +164,7 @@ async function fullPost(){
     articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${currentPostId}`
     let response = await fetch(articleUrl)
     const SinglePost = await response.json();
-    console.log(SinglePost);
+    // console.log(SinglePost);
     
     
 
