@@ -1,3 +1,4 @@
+
 //>>>>>>>>>>>>>>>>>>>>>>>>>fetching Commet<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -99,11 +100,32 @@ setTimeout(() => {location.reload()}, 5000);
 }
 
 
+let loggedChecker = () =>{
+
+const Options = {
+    method: 'GET',
+    headers: { 'token': JSON.parse(sessionStorage.getItem('token'))},
+ };
+  
+ 
+ fetch('https://my-brand-api-v2.herokuapp.com/api/user/validite', Options)
+ 
+ 
+          
+ .then(response => {
+//  .then(data => {console.log(data)
+console.log(response.status)
+ 
+ if(response.status ==400 ){
+    const removeComment = document.querySelector(".comment-section");
+    removeComment.style.display="none"
+    console.log("working")
+ 
+ 
+}})
 
 
-
-
-
+}
 
 
 
@@ -160,6 +182,7 @@ setTimeout(() => {location.reload()}, 5000);
 ///////////////////////end of comment creation\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 async function fullPost(){
+    loggedChecker()
     let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
     articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/${currentPostId}`
     let response = await fetch(articleUrl)
@@ -463,114 +486,13 @@ body{
 `
 displayer.innerHTML += `${fullarticle}`;
 fetchingCommet()
+
+
+
 }
 
-// like function
-
-
-
-
-
-// let myID = localStorage.getItem("currentPostId");
-// let reg = /\d+(\w)\d+/
-// let myID3 = myID.match(reg);
-// let fID = myID3[0];
-// console.log("you made it bro:"+fID)
-
-
-// function liking(){
-//     for(let i=0;i<localStorage.length;i++){
-//         let key = localStorage.key(i)
-//         // console.log(key)
-
-
-
-
-//     //let displayer = document.getElementById("hhh");
-//     let arr = JSON.parse(localStorage.getItem('currentPost'))
-//     let title = arr.titleInfo;
-//     let img   = arr.imgUrlInfo;
-//     let Comments = arr.Comments;
-//     let like = parseInt(arr.likes);
-//     let fullArticle = arr.fullArticleInfo;
-
-
-
-
-//     let articleData = {
-//             titleInfo: `${title}`,
-//             fullArticleInfo: `${fullArticle}`,
-//             imgUrlInfo: `${img}`,
-//             Comments:Comments,
-//             type:`posts`,
-//             likes:like+1,
-//         }
-//         console.log(Comments)
-// console.log("hello"+articleData)
-
-//         localStorage.setItem(fID, JSON.stringify(articleData))
-//         location.reload();
-//         fullPost();
-
-//     }
-// }
-
-// //end of liking operation
 
 fullPost()
-
-
-
-// fullPost()
-
-
-// function commmenting(){
-
-//     for(let i=0;i<localStorage.length;i++){
-//         key = localStorage.key(i)
-//        console.log(key)
-
-
-//    let Commentdisplayer = document.querySelector(".kk");
-//    let arr = JSON.parse(localStorage.getItem(key))
-//    let commenterName = arr.commenterName;
-//    let commentBody   = arr.commenterBody;
-//    let parentPost = arr.parentPost;
-//    let type = arr.type;
-//    //  let reg = "/\d{7-6}\w*\d{2}/";
-//    //  let answer = key.test(r);
-//    //  console.log(answer)
-
-
-
-//    if(type == `comment` && fID == parentPost) {
-
-//   let commmentTemplete = `
-//   <div class="comment-container"><br/>
-//         <div class="sendName">
-//             <p id="sendName">${commenterName}</p>
-//         </div>
-//         <div class="commentBody">
-//             <p id="commentBody">${commentBody} </p>
-//         </div><br/>
-
-//     </div>
-  
-  
-//   `
-//   Commentdisplayer.innerHTML += commmentTemplete;
-
-
-
-//    }
-
-
-// }
-
-// }
-// commmenting();
-
-
 
 
 
