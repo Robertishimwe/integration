@@ -19,7 +19,7 @@
 
 
  let storeMessage = () =>{
-   document.getElementById("demo").innerHTML = "Paragraph changed!";
+   // document.getElementById("demo").innerHTML = "Paragraph changed!";
 
    // declaration of valiable
 
