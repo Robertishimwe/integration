@@ -11,22 +11,12 @@ localStorage.setItem("currentPostId",JSON.stringify(postId))
 async function blogFetch(){
 let response = await fetch("https://my-brand-api-v2.herokuapp.com/api/articles")
 const allPosts = await response.json(); 
-// console.log(allPosts);
+
 
 //looping through
 for(let i=0;i<allPosts.length;i++){
-//     key = localStorage.key(i)
-//    console.log(key)
 
-
-
-    // for(let i=0;i<localStorage.length;i++){
-    //      key = localStorage.key(i)
-    //     console.log(key)
-
-
-      let displayer = document.getElementById("hhh");
-    // let arr = JSON.parse(localStorage.getItem(key))
+    let displayer = document.getElementById("hhh");
     let arr = allPosts[i];
     let title = arr.title;
     let img   = arr.ImageLink;
@@ -34,29 +24,14 @@ for(let i=0;i<allPosts.length;i++){
     let comments = arr.comments;
     let like = parseInt(arr.likes);
     let type = arr.type;
-    // console.log(JSON.parse(img))
-    //  let reg = "/\d{7-6}\w*\d{2}/";
-    //  let answer = key.test(r);
-    //  console.log(answer)
+
 
 
 
   if(1>0) {
 
 
-    //function liking(){
-        // let articleData = {
-        //     titleInfo: `${title}`,
-        //     fullArticleInfo: `${fullArticle}`,
-        //     imgUrlInfo: `${img}`,
-        //     type:`posts`,
-        //     likes:`${like+1}`,
-        // }
-
-        // localStorage.setItem(key, JSON.stringify(articleData))
-
-    //}
-
+    
 
 
 
