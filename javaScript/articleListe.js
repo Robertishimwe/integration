@@ -23,6 +23,67 @@ let deletePost=(myKey) => {
 
 
 
+function saveChange(myKey){
+    let title1 = document.querySelector(".ed").value;
+    let body1 = document.querySelector(".er").value;
+
+ 
+    const UpdateOptions = {
+
+    
+        method: 'PATCH',
+        headers: {
+         'Content-Type':'application/json',
+         'Token': JSON.parse(sessionStorage.getItem('token'))
+     
+       },
+       body: JSON.stringify({
+   
+        title:title1,
+        articleBody:body1,
+
+  
+  
+     })
+    }
+
+
+//  let articleData = {
+//         titleInfo: `${title1}`,
+//         fullArticleInfo: `${body1}`,
+//         imgUrlInfo: `${img}`,
+//         type:`posts`,
+//         likes:like,
+//     }
+
+
+
+
+
+    
+    
+
+
+    fetch('https://my-brand-api-v2.herokuapp.com/api/articles/'+myKey, UpdateOptions)
+    .then(response => {
+
+        if(response.status == 200){
+            alert('updated')
+        }
+    })
+
+   
+
+    // setTimeout(() => {
+
+    //     location.reload();
+
+
+    //   }, 3000);
+}
+
+
+
 
 
 
@@ -286,23 +347,5 @@ function articleListe() {
 
 
 
-    function saveChange(postID){
-        let title1 = document.querySelector(".articleTitle").value;
-        let body1 = document.querySelector(".articleBody").value;
-    
-    
-    console.log(title1 , body1)
-    
-    
-        let articleData = {
-            titleInfo: `${title1}`,
-            fullArticleInfo: `${body1}`,
-            imgUrlInfo: `${img}`,
-            type:`posts`,
-            likes:like,
-        }
-        localStorage.setItem(postID, JSON.stringify(articleData))
-        location.reload();
-    }
        
     
