@@ -41,7 +41,103 @@ const fetchingCommet = async () => {
 
 
 const createCommet = async () => {
+
+    document.getElementById("postComment").style.display="none"
+     console.log(postComment)
+   document.getElementById("comDesplayer").innerHTML=`
+   
+   
+
+   <style>
+            .popup {
+               margin: auto;
+               padding: 0px;
+               background: #fff;
+               border-radius: 5px;
+               width: 50%;
+               position: relative;
+               transition: all 5s ease-in-out;
+            
+             }
+             .loaderr{
+                 width:50px;
+                 height:50px;
+                 display:flex;
+                 margin-left:42%;
+             }
+             
+             .popup h2 {
+               margin-top: 0;
+               color: #333;
+               font-family: Tahoma, Arial, sans-serif;
+             }
+            </style>
+            
+            <div class="popup">
+		      <h2>  <img src="../images/Spinner.gif" class="loaderr">  </h2>
+            </div>
+	
+   
+   
+   
+   
+   
+   `
+
+
 commentBody = document.getElementById("commentBody").value;
+if(commentBody.trim().split("").length <= 0 ){
+
+
+
+    document.getElementById("comDesplayer").innerHTML=`
+   
+   
+
+   <style>
+            .popup {
+               margin: auto;
+               padding: 0px;
+               background: #fff;
+               border-radius: 5px;
+               width: 50%;
+               position: relative;
+               transition: all 5s ease-in-out;
+            
+             }
+             .loaderr{
+                 width:50px;
+                 height:50px;
+                 display:flex;
+                 margin-left:42%;
+             }
+             
+             .popup h2 {
+               margin-top: 0;
+               color: #333;
+               font-family: Tahoma, Arial, sans-serif;
+               font-size:17px
+             }
+            </style>
+            
+            <div class="popup">
+		      <h2>  comment can not be empty</h2>
+            </div>
+	
+   
+   
+   
+   
+   
+   `
+   document.getElementById("postComment").style.display="block"
+
+    return
+}else{
+
+
+
+
 // console.log("coment body",commentBody)
 const commentOptions = {
     
@@ -62,8 +158,110 @@ const commentOptions = {
 let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
 
 fetch(`https://my-brand-api-v2.herokuapp.com/api/articles/comments/${currentPostId}`, commentOptions)
+.then(response =>{
 
-setTimeout(() => {location.reload()}, 5000);
+    if(response.status == 200){
+
+
+
+        document.getElementById("comDesplayer").innerHTML=`
+   
+   
+
+   <style>
+            .popup {
+               margin: auto;
+               padding: 0px;
+               background: #fff;
+               border-radius: 5px;
+               width: 50%;
+               position: relative;
+               transition: all 5s ease-in-out;
+            
+             }
+             .loaderr{
+                 width:50px;
+                 height:50px;
+                 display:flex;
+                 margin-left:42%;
+             }
+             
+             .popup h2 {
+               margin-top: 0;
+               color: #333;
+               font-family: Tahoma, Arial, sans-serif;
+             }
+            </style>
+            
+            <div class="popup">
+		      <h2>Thank you for your comment</h2>
+            </div>
+	
+   
+   
+   
+   
+   
+   `
+
+
+
+
+    }else{
+
+
+
+        document.getElementById("comDesplayer").innerHTML=`
+   
+   
+
+        <style>
+                 .popup {
+                    margin: auto;
+                    padding: 0px;
+                    background: #fff;
+                    border-radius: 5px;
+                    width: 50%;
+                    position: relative;
+                    transition: all 5s ease-in-out;
+                 
+                  }
+                  .loaderr{
+                      width:50px;
+                      height:50px;
+                      display:flex;
+                      margin-left:42%;
+                  }
+                  
+                  .popup h2 {
+                    margin-top: 0;
+                    color: #333;
+                    font-family: Tahoma, Arial, sans-serif;
+                  }
+                 </style>
+                 
+                 <div class="popup">
+                   <h2>Ooops, something went wrong</h2>
+                 </div>
+         
+        
+        
+        
+        
+        
+        `
+     
+     
+
+
+
+
+    }
+
+
+})}
+
+setTimeout(() => {location.reload()}, 6000);
 
 
      
@@ -74,7 +272,12 @@ setTimeout(() => {location.reload()}, 5000);
 //>>>>>>>>>>>>>>>>>>>>>>>>>liking post<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
  const liking = async() => {
+    
 
+    loade = document.getElementById("like-btn");
+    loade.style.display="none"
+    likeLoade = document.getElementById("like-loader");
+    likeLoade.style.display="inline";
 
     let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
     articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/like/${currentPostId}`
@@ -312,6 +515,12 @@ body{
     width: 20px;
     height: 20px;
 }
+#like-loader{
+    display:none;
+    width: 20px;
+    height: 20px;
+    
+}
 .reaction{
     background-color:#EDF5FA;
     width: 150px;
@@ -459,11 +668,13 @@ body{
         <p class="post-text">${JSON.parse(articleBody)}</p>
 
         <div class="reaction">
-          Reaction: <img src="../images/like.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn"> <span class="like-counter">${like}</span>
+          Reaction: <img src="../images/like.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn">
+          <img src="../images/Spinner.gif" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-loader">
+           <span class="like-counter">${like}</span>
       </div>
     </div>
     <!-- <div class="reaction">
-        reaction: <img src="../images/like.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn"> <span class="like-counter">${2+3}</span>
+        reaction: <img src="../images/sp.svg" alt="like" class="like-btn reaction-btn" onclick="liking()" id="like-btn"> <span class="like-counter">${2+3}</span>
     </div> -->
     <div class="comment-section">
         <p class="comment-box-title">Leave a comment</p>
@@ -473,7 +684,8 @@ body{
         <input type="text" name="name" id="commenterName" class="comment-items ali setcolor" ><br/>
         <label for="email" class="comment-items">Email:</label><br/>
         <input type="email" name="email" id="commenterEmail" class="comment-items ali setcolor" disabled><br/> -->
-        <input type="submit" value="Submit" class="comment-items comment-btn ali" onclick="createCommet()" >
+        <input type="submit" value="Submit" class="comment-items comment-btn ali" id="postComment" onclick="createCommet()" >
+        <p id="comDesplayer"></p>
 
     </div>
     <div id="kk">
