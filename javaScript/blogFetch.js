@@ -3,7 +3,7 @@ let viewPost=(postId)=>{
 let Posting = localStorage.getItem(postId);
 localStorage.setItem("currentPost",Posting)
 localStorage.setItem("currentPostId",JSON.stringify(postId))
-console.log("robert:"+Posting)
+// console.log("robert:"+Posting)
  location = "../html/fullArticle.html";
 }
 
@@ -11,7 +11,7 @@ console.log("robert:"+Posting)
 async function blogFetch(){
 let response = await fetch("https://my-brand-api-v2.herokuapp.com/api/articles")
 const allPosts = await response.json(); 
-console.log(allPosts);
+// console.log(allPosts);
 
 //looping through
 for(let i=0;i<allPosts.length;i++){
@@ -34,7 +34,7 @@ for(let i=0;i<allPosts.length;i++){
     let comments = arr.comments;
     let like = parseInt(arr.likes);
     let type = arr.type;
-    console.log(JSON.parse(img))
+    // console.log(JSON.parse(img))
     //  let reg = "/\d{7-6}\w*\d{2}/";
     //  let answer = key.test(r);
     //  console.log(answer)
@@ -98,7 +98,7 @@ let myKey =await arr._id ;
 
 
 
-console.log("dsds ");
+// console.log("dsds ");
 
 
 

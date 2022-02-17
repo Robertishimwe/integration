@@ -70,6 +70,9 @@ function saveChange(myKey){
         if(response.status == 200){
             alert('updated')
         }
+        else{
+            alert("error")
+        }
     })
 
    
