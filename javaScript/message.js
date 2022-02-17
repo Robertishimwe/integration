@@ -141,7 +141,7 @@ if(sendName == '' || email == "" || message == ""){
             </style>
             
             <div class="popup">
-		      <h2>Oops, something went wrong. </h2>
+		      <h2>Oops, something went wrong.</h2>
             </div>
 	
             
