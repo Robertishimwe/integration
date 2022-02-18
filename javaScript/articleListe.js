@@ -1,6 +1,22 @@
 let deletePost=(myKey) => {
 
-
+    document.querySelector(".editDisplay").style.display="block"
+    document.querySelector(".editDisplay").innerHTML=`
+    
+    
+<style>
+.loader{
+   display:flex;
+   margin:auto;
+   width:30px;
+   height:30px;
+}
+</style>
+<img src="../images/Spinner.gif" class="loader">
+    
+    
+    
+    `
 
     const deleteOptions = {
     
@@ -15,6 +31,27 @@ let deletePost=(myKey) => {
 
 
     fetch('https://my-brand-api-v2.herokuapp.com/api/articles/'+myKey, deleteOptions)
+    .then(response => {
+        console.log(response)
+
+        if(response.status == 204){
+            document.querySelector(".editDisplay").style.display="block"
+            document.querySelector(".editDisplay").innerHTML='Deleted successfully'
+        }
+        else{
+            document.querySelector(".editDisplay").style.display="block"
+            document.querySelector(".editDisplay").innerHTML='Oops, something went worng. try again later'
+        }
+    })
+
+   
+
+    setTimeout(() => {
+
+        location.reload();
+
+
+      }, 5000);
     
     // location.reload();
     
