@@ -104,21 +104,28 @@ function meee() {
         if(response.status == 200){
             document.querySelector(".editDisplay").style.display="block"
             document.querySelector(".editDisplay").innerHTML='Posted successfully'
-        }
-        else{
-            document.querySelector(".editDisplay").style.display="block"
-            document.querySelector(".editDisplay").innerHTML='Oops, something went worng. try again later'
-        }
-    })
-
-   
-
-    setTimeout(() => {
+                setTimeout(() => {
 
         location.reload();
 
 
       }, 5000);
+        }
+        else{
+            document.querySelector(".editDisplay").style.display="block"
+            document.querySelector(".editDisplay").innerHTML='Oops, something went worng. try again later'
+                setTimeout(() => {
+
+        location.reload();
+
+
+      }, 5000);
+        }
+    })
+
+   
+
+
    
         
     
