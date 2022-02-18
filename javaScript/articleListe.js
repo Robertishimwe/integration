@@ -24,6 +24,24 @@ let deletePost=(myKey) => {
 
 
 function saveChange(myKey){
+    document.querySelector(".editDisplay").style.display="block"
+    document.querySelector(".editDisplay").innerHTML=`
+    
+    
+<style>
+.loader{
+   display:flex;
+   margin:auto;
+   width:30px;
+   height:30px;
+}
+</style>
+<img src="../images/Spinner.gif" class="loader">
+    
+    
+    
+    `
+
     let title1 = document.querySelector(".ed").value;
     let body1 = document.querySelector(".er").value;
 
@@ -68,21 +86,23 @@ function saveChange(myKey){
     .then(response => {
 
         if(response.status == 200){
-            alert('updated')
+            document.querySelector(".editDisplay").style.display="block"
+            document.querySelector(".editDisplay").innerHTML='Updated successfully'
         }
         else{
-            alert("error")
+            document.querySelector(".editDisplay").style.display="block"
+            document.querySelector(".editDisplay").innerHTML='Oops, something went worng. try again later'
         }
     })
 
    
 
-    // setTimeout(() => {
+    setTimeout(() => {
 
-    //     location.reload();
+        location.reload();
 
 
-    //   }, 3000);
+      }, 5000);
 }
 
 
@@ -239,6 +259,18 @@ function articleListe() {
           .articleTitle{
               margin-top:20px;
           }
+          .editDisplay{
+              margin:auto;
+              margin-left:10px;
+              width:45%;
+              height:40px;
+            position: absolute;
+            background: #fff;
+            border-radius:13px;
+            font-size:15px;
+            text-align:center;
+            display:none;
+          }
 
       </style>
     
@@ -248,6 +280,7 @@ function articleListe() {
     
     
         <div class="articlebox result">
+        <p class="editDisplay">ktfjdjfdfdhgdfhfdfd</p>
             <div class="newArticle">
                 <p>Article liste</p>
             </div>
