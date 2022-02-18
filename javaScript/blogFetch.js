@@ -70,7 +70,7 @@ let myKey =await arr._id ;
 
     </div>
     `
-    loader.style.display="none"
+    loader.style.display=
     displayer.innerHTML += temp;
     // displayer.innerHTML += temp;
 

@@ -278,8 +278,13 @@ setTimeout(() => {location.reload()}, 6000);
     loade.style.display="none"
     likeLoade = document.getElementById("like-loader");
     likeLoade.style.display="inline";
+    IFlogged = sessionStorage.getItem('token')
+    if(!IFlogged){
+     document.querySelector(".reaction").innerHTML = "You nust be logged in"   
+    }
 
     let currentPostId  = JSON.parse(localStorage.getItem('currentPostId'));
+    
     articleUrl = `https://my-brand-api-v2.herokuapp.com/api/articles/like/${currentPostId}`
 
 
