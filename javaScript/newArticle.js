@@ -20,7 +20,23 @@ let key = `${keySectionOne}${keySectionTwo}${keySectionThree}`;
 
 function meee() {
 
-
+    document.querySelector(".editDisplay").style.display="block"
+    document.querySelector(".editDisplay").innerHTML=`
+    
+    
+<style>
+.loader{
+   display:flex;
+   margin:auto;
+   width:30px;
+   height:30px;
+}
+</style>
+<img src="../images/Spinner.gif" class="loader">
+    
+    
+    
+    `
 
     const img = document.getElementById("imgUrl")
     
@@ -58,7 +74,7 @@ function meee() {
     //     likes:0,
     // }
 
-
+  
 
 
 
@@ -80,11 +96,31 @@ function meee() {
         })
      };
      
+     
      fetch('https://my-brand-api-v2.herokuapp.com/api/articles/create', UserRequestOptions)
-      
-        .then(response => response.json())
-        .then(data => {console.log(data)})
-        console.log("deal done")
+     .then(response => {
+        console.log(response)
+
+        if(response.status == 200){
+            document.querySelector(".editDisplay").style.display="block"
+            document.querySelector(".editDisplay").innerHTML='Posted successfully'
+        }
+        else{
+            document.querySelector(".editDisplay").style.display="block"
+            document.querySelector(".editDisplay").innerHTML='Oops, something went worng. try again later'
+        }
+    })
+
+   
+
+    setTimeout(() => {
+
+        location.reload();
+
+
+      }, 5000);
+   
+        
     
 
 
@@ -145,12 +181,26 @@ function newArticle() {
               width: 51%;
               margin-left: 30%;
           }
+          
+          .editDisplay{
+            margin:auto;
+            margin-left:27%;
+            margin-top:7px;
+            width:30%;
+            height:40px;
+          position: absolute;
+          background: #fff;
+          border-radius:13px;
+          font-size:15px;
+          text-align:center;
+          display:none;
+        }
       </style>
     
     
     </head>
     <body>
-    
+    <p class="editDisplay">ktfjdjfdfdhgdfhfdfd</p>
     
         <div class="articlebox">
             <div class="newArticle">
